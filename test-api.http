@@ -1,0 +1,36 @@
+@baseURL = http://localhost:3000
+
+GET {{baseURL}}
+
+###
+
+# @name createRecord
+POST {{baseURL}}
+content-type: application/json
+
+{
+    "nome": "Teste",
+    "idade": 10
+}
+
+###
+
+# @id = {{createRecord.response.body.$.nome}}
+
+# GET {{baseURL}}/{{id}}
+GET {{baseURL}}/65bbf15717987410111f5fe7
+
+###
+
+# @name updateRecord
+PUT {{baseURL}}/65bbf15717987410111f5fe7
+content-type: application/json
+
+{
+    "nome": "Teste4",
+    "idade": 40
+}
+
+###
+
+PATCH   {{baseURL}}
